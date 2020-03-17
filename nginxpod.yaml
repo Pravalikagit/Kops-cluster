@@ -1,1 +1,14 @@
-nginx pod is created.
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-nginx-pod
+  labels:
+    environment: production
+    app: nginx
+    class: dockerTraining
+spec:
+  containers:
+    - name: my-nginx-container
+      image: nginx:1.17.8
+      ports:
+       - containerPort: 80
