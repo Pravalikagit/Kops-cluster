@@ -1,0 +1,15 @@
+-sh -i /Users/vidyadharrangojoo/Downloads/My-kops.pem.txt ec2-user@52.23.170.165
+CLUSTER NAME & BUCKET NAME:
+1)export NAME=pravalika.k8s.local
+2)export KOPS_STATE_STORE=s3://pravalika-k8s-kops-storage
+CREATE CLUSTER:
+3)kops create cluster --zones us-east-1a,us-east-1b,us-east-1c,us-east-1d,us-east-1e,us-east-1f ${NAME}
+4)kops edit cluster ${NAME}
+     >authenticationTokenWebhook: true
+     >authorizationMode: Webhook
+5)kpos edit ig nodes --name ${NAME}
+6)kpos edit ig master-us-east-1a --name ${NAME}
+
+GIT:username & password:
+>git config --global user.name “pravalika1191@gmail.com”
+>git config --global user.password “Devops@1cluster”
